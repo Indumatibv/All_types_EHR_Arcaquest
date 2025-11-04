@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ehr-app-deployment
+  namespace: default
+  labels:
+    app: ehr-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ehr-app
+  template:
+    metadata:
+      labels:
+        app: ehr-app
+    spec:
+      containers:
+      - name: ehr-app
+        image: arcaquest.azurecr.io/arcaquest-ehr:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+        env:
+        - name: AZURE_OPENAI_KEY
+          valueFrom:
+            secretKeyRef:
+              name: azure-openai-secret
+              key: AZURE_OPENAI_KEY
+        - name: AZURE_OPENAI_API_VERSION
+          value: "2024-12-01-preview"
+        - name: MAX_CONCURRENT_REQUESTS
+          value: "5"
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 1
+          successThreshold: 1
+          failureThreshold: 3

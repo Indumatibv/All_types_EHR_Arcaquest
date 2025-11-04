@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ehr-app-service
+  namespace: default
+  labels:
+    app: ehr-app
+spec:
+  selector:
+    app: ehr-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+    name: http
+  type: LoadBalancer
