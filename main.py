@@ -980,7 +980,7 @@ async def _process_logic(request: Request):
             azure_endpoint="https://arcaquest-emr.openai.azure.com/",
             api_key=os.getenv("AZURE_OPENAI_KEY"),
             azure_deployment="o4-mini",
-            # temperature=0.2,     # <-- Set temperature here
+            temperature=0.2,     # <-- Set temperature here
         )
 
         template = """
