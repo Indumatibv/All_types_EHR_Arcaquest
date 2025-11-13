@@ -9,8 +9,12 @@ spec:
   selector:
     app: ehr-app
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8000
-    name: http
+    - protocol: TCP
+      port: 8000          # externally exposed port
+      targetPort: 8000    # forwards to same port inside the container
+      name: http
   type: LoadBalancer
+  # Optional — ensure Azure creates a PUBLIC load balancer
+  # (remove or comment this if you’re okay with internal-only access)
+  # annotations:
+  #   service.beta.kubernetes.io/azure-load-balancer-internal: "false"
