@@ -370,6 +370,54 @@ async def process_single_conditional_field(dictionary, qa_chain, request_id):
 # -----------------------
 # Async process single table field
 # -----------------------
+# -----------------------
+# Frequency normalization helpers
+# -----------------------
+
+NUMBER_WORDS = {
+    1: "One",
+    2: "Two",
+    3: "Three",
+    4: "Four",
+    5: "Five",
+    6: "Six",
+    7: "Seven"
+}
+
+WORD_TO_NUMBER = {
+    "one": 1,
+    "two": 2,
+    "three": 3,
+    "four": 4,
+    "five": 5,
+    "six": 6,
+    "seven": 7
+}
+
+def normalize_frequency_text(freq: str) -> str:
+    if not isinstance(freq, str):
+        return freq
+
+    text = freq.strip().lower()
+
+    # Case 1: numeric → word
+    match = re.search(r"(\d+)\s+(times?|days?)\s+a\s+week", text)
+    if match:
+        num = int(match.group(1))
+        word = NUMBER_WORDS.get(num)
+        if word:
+            return f"{word} days a week"
+
+    # Case 2: word → word (normalize phrasing)
+    match = re.search(r"(one|two|three|four|five|six|seven)\s+(times?|days?)\s+a\s+week", text)
+    if match:
+        num_word = match.group(1)
+        num = WORD_TO_NUMBER[num_word]
+        word = NUMBER_WORDS.get(num)
+        if word:
+            return f"{word} days a week"
+
+    return freq
 
 async def process_single_table_field(dictionary, qa_chain, request_id):
     try:
@@ -390,7 +438,7 @@ async def process_single_table_field(dictionary, qa_chain, request_id):
             f"From the conversation, identify all physical or exercise activities the participant mentions. "
             f"For each activity, extract details like type (Aerobics/Strength/Flexibility/Balance), "
             f"activity name, duration (in minutes if mentioned), intensity (Mild/Moderate/Intense), "
-            f"frequency (Daily, 3/4/5/6 days a week), and days if specific days are mentioned. "
+            f"frequency (Daily, Three/Four/Five/Six days a week), and days if specific days are mentioned. "
             f"Respond as a list of structured entries. "
             f"If any information is missing, fill 'No information found'."
         )
@@ -457,6 +505,10 @@ async def process_single_table_field(dictionary, qa_chain, request_id):
         except Exception as e:
             logging.error(f"[{request_id}] JSON parsing failed for '{table_label}': {e}")
             value_rows = [{"activity_type": "No information found"}]
+
+        # for row in value_rows:
+        #     if "frequency" in row:
+        #         row["frequency"] = normalize_frequency_text(row["frequency"])
 
         dictionary["value"] = value_rows
 
