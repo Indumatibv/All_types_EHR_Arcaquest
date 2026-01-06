@@ -75,6 +75,11 @@ async def generate_summary_async(transcript_path: str, output_file: str):
 # -----------------------
 # Build retriever using FAISS per request
 # -----------------------
+
+import os
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+
 def build_retriever(summary_file: str):
     try:
         logging.info(f"Building FAISS vectorstore from {summary_file}")
@@ -973,7 +978,10 @@ async def _process_logic(request: Request):
             logging.warning(f"[{request_id}] FAISS retriever not built, skipping QA chain.")
             return updated_json
 
-        retriever = vectorstore.as_retriever()
+        # retriever = vectorstore.as_retriever()
+        retriever = vectorstore.as_retriever(
+            search_kwargs={"k": 8}
+        )
 
         llm = AzureChatOpenAI(
             api_version=os.getenv("AZURE_OPENAI_API_VERSION"),
