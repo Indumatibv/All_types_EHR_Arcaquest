@@ -659,20 +659,48 @@ async def process_single_field_group(dictionary, qa_chain, request_id):
     expected_units = {f["id"]: extract_expected_unit(f.get("label", "")) for f in fields}
 
     # === Prompt ===
+    # base_prompt = (
+    #     f"You are an information extraction model.\n\n"
+    #     f"Extract numeric daily intake values mentioned in the conversation for each of these fields:\n"
+    #     f"{json.dumps(field_labels, indent=2)}.\n\n"
+    #     f"For each field, you must identify:\n"
+    #     f"- The numeric value (e.g. 1, 30, 40)\n"
+    #     f"- The unit mentioned in the conversation (e.g. g, mg, ml)\n"
+    #     f"- If no value is mentioned, respond with 'No information found'.\n\n"
+    #     f"The expected units are:\n"
+    #     f"{json.dumps(expected_units, indent=2)}.\n\n"
+    #     f"If the unit differs, convert it accordingly (mg ↔ g, l ↔ ml, etc.).\n\n"
+    #     f"Return output strictly as valid JSON mapping field ids to objects with 'value' and 'unit' keys.\n"
+    #     f"If a field is not mentioned, still include it with 'value': 'No information found' and 'unit': null.\n"
+    #     f"Return only valid JSON — no extra text."
+    # )
+
     base_prompt = (
         f"You are an information extraction model.\n\n"
-        f"Extract numeric daily intake values mentioned in the conversation for each of these fields:\n"
+        f"Extract intake values mentioned in the conversation for each of these fields:\n"
         f"{json.dumps(field_labels, indent=2)}.\n\n"
         f"For each field, you must identify:\n"
         f"- The numeric value (e.g. 1, 30, 40)\n"
-        f"- The unit mentioned in the conversation (e.g. g, mg, ml)\n"
-        f"- If no value is mentioned, respond with 'No information found'.\n\n"
-        f"The expected units are:\n"
+        f"- The unit mentioned in the conversation (e.g. mg, g, kg, ml, l)\n"
+        f"- The time basis if mentioned (day, week, month)\n\n"
+        f"The expected units for each field are:\n"
         f"{json.dumps(expected_units, indent=2)}.\n\n"
-        f"If the unit differs, convert it accordingly (mg ↔ g, l ↔ ml, etc.).\n\n"
-        f"Return output strictly as valid JSON mapping field ids to objects with 'value' and 'unit' keys.\n"
-        f"If a field is not mentioned, still include it with 'value': 'No information found' and 'unit': null.\n"
-        f"Return only valid JSON — no extra text."
+        f"If the value is NOT given per day:\n"
+        f"- Convert it to a daily value\n"
+        f"- Assume 30 days per month\n"
+        f"- Assume 7 days per week\n\n"
+        f"If unit conversion is required, convert accordingly:\n"
+        f"- kg ↔ g ↔ mg\n"
+        f"- l ↔ ml\n\n"
+        f"Examples:\n"
+        f"- '300 g per month' → 10 g per day\n"
+        f"- '1 kg per month' → 33.33 g per day\n"
+        f"- '1000 kg per month' → 33333.33 g per day\n\n"
+        f"If a field is not mentioned in the conversation, return:\n"
+        f"'value': 'No information found', 'unit': null, 'time_basis': null\n\n"
+        f"Return output strictly as valid JSON mapping field ids to objects with keys:\n"
+        f"'value', 'unit', and 'time_basis'.\n"
+        f"Return ONLY valid JSON — no explanations, no markdown, no extra text."
     )
 
     # initialize structure
