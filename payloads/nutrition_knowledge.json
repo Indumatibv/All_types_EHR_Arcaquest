@@ -1,0 +1,443 @@
+{
+  "conversation": [
+    {
+      "speaker": "doctor",
+      "message": "I’d like to ask you a few questions to check your knowledge about nutrition."
+    },
+    {
+      "speaker": "patient",
+      "message": "Sure, let’s start."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Whole plant foods are foods as they exist in nature. Is that correct?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Yes."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Good. Now, choose a food with high carbohydrate content."
+    },
+    {
+      "speaker": "patient",
+      "message": "Rice."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Right. Which food is a good substitute for ragi?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Red rice."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Correct. When compared to natural foods, processed foods are usually?"
+    },
+    {
+      "speaker": "patient",
+      "message": "High in calories."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Exactly. Choose a food with high protein content."
+    },
+    {
+      "speaker": "patient",
+      "message": "Broccoli."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Yes. Which oil has high unsaturated fat content?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Sunflower oil."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Right. Which food is high in saturated fat?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Meat."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Good. Now, which fats are the most healthy?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Unsaturated fats."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Exactly. Choose a food rich in vitamins and minerals."
+    },
+    {
+      "speaker": "patient",
+      "message": "Leafy vegetables."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Correct. How many daily servings of fruits and vegetables are recommended?"
+    },
+    {
+      "speaker": "patient",
+      "message": "5 servings."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Yes. Which food is high in fibre content?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Pulses."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Good. Which food type is high in salt content?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Canned foods."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Correct. Which is the best cooking method?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Steaming."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Right. Eating nuts is expensive with marginal benefits—do you agree?"
+    },
+    {
+      "speaker": "patient",
+      "message": "No."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Good answer. Are artificial sweeteners safe and healthy?"
+    },
+    {
+      "speaker": "patient",
+      "message": "No."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Correct. How many meals are associated with longevity?"
+    },
+    {
+      "speaker": "patient",
+      "message": "2-3 meals."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Yes. What is the most important meal of the day?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Breakfast."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Exactly. Do saturated fats increase the risk for heart disease?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Yes."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Correct. What is the recommended daily water intake for adults?"
+    },
+    {
+      "speaker": "patient",
+      "message": "2 litres."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Yes. High fibre intake prevents many diseases except which one?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Asthma."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Exactly. And finally, high salt intake increases the risk of which disease?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Hypertension."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Perfect. That completes the nutrition knowledge check!"
+    }
+  ],
+  "summary": {
+    "questions": [
+      {
+        "id": "nutrition_knowledge_questionnaire",
+        "title": "Nutrition Knowledge Questionnaire",
+        "icon": "material-symbols:quiz-outline",
+        "fields": [
+          {
+            "id": "whole_plant_foods",
+            "label": "Whole plant foods are foods as they exist in nature",
+            "type": "radio",
+            "options": [
+              "Yes",
+              "No",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "high_carb_food",
+            "label": "Choose a food with high carbohydrate content",
+            "type": "radio",
+            "options": [
+              "Rice",
+              "Cabbage",
+              "Figs",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "ragi_substitute",
+            "label": "Choose a food which is a good substitute for ragi",
+            "type": "radio",
+            "options": [
+              "White Rice",
+              "Red Rice",
+              "Noodles",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "processed_vs_natural",
+            "label": "When compared to natural foods, processed foods are",
+            "type": "radio",
+            "options": [
+              "High in Calories",
+              "High in Nutrients",
+              "High in Fibres",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "high_protein_food",
+            "label": "Choose a food with high protein content",
+            "type": "radio",
+            "options": [
+              "Oats",
+              "Pasta",
+              "Broccoli",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "unsaturated_fat_oil",
+            "label": "Choose an oil with high unsaturated fat content",
+            "type": "radio",
+            "options": [
+              "Sunflower Oil",
+              "Ghee",
+              "Butter/Cheese",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "saturated_fat_food",
+            "label": "Choose a food with high saturated fat content",
+            "type": "radio",
+            "options": [
+              "Meat",
+              "Olive Oil",
+              "Nuts",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "healthiest_fat",
+            "label": "Choose the most healthy fat",
+            "type": "radio",
+            "options": [
+              "Saturated Fats",
+              "Unsaturated Fats",
+              "Trans/Fatty Acids",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "vitamin_mineral_food",
+            "label": "Choose a food with high vitamin & mineral content",
+            "type": "radio",
+            "options": [
+              "Leafy Vegetables",
+              "Whole Grains",
+              "Pulses",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "daily_servings",
+            "label": "Recommended daily servings of fruits & vegetables are",
+            "type": "radio",
+            "options": [
+              "3 Servings",
+              "4 Servings",
+              "5 Servings",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "high_fiber_food",
+            "label": "Choose a food which is high in fibre content",
+            "type": "radio",
+            "options": [
+              "Meat",
+              "Pulses",
+              "White Rice",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "high_salt_food",
+            "label": "Choose a food which is high in salt content",
+            "type": "radio",
+            "options": [
+              "Canned Foods",
+              "Bread",
+              "Vegetables",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "best_cooking_method",
+            "label": "Choose the best cooking method",
+            "type": "radio",
+            "options": [
+              "Steaming",
+              "Boiling",
+              "Sauting",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "nuts_expensive",
+            "label": "Eating nuts are expensive with marginal benefits",
+            "type": "radio",
+            "options": [
+              "Yes",
+              "No",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "artificial_sweeteners",
+            "label": "Artificial sweeteners are safe & healthy",
+            "type": "radio",
+            "options": [
+              "Yes",
+              "No",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "longevity_meals",
+            "label": "How many meals is associated with longevity",
+            "type": "radio",
+            "options": [
+              "1",
+              "2-3",
+              "4",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "important_meal",
+            "label": "The most important meal of the day is",
+            "type": "radio",
+            "options": [
+              "Breakfast",
+              "Lunch",
+              "Dinner",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "saturated_fat_heart_disease",
+            "label": "Saturated fats increases the risk for heart disease",
+            "type": "radio",
+            "options": [
+              "Yes",
+              "No",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "water_intake",
+            "label": "Recommended water intake for adults per day is",
+            "type": "radio",
+            "options": [
+              "1 Litre",
+              "2 Litre",
+              "3 Litre",
+              "Not Sure"
+            ],
+            "value": ""
+          },
+          {
+            "id": "fiber_prevents_disease",
+            "label": "High fibre intake prevents all the following disease except",
+            "type": "radio",
+            "options": [
+              "Heart Disease",
+              "Cancer",
+              "Obesity",
+              "Asthma"
+            ],
+            "value": ""
+          },
+          {
+            "id": "salt_disease_risk",
+            "label": "High salt intake increases the risk of following disease",
+            "type": "radio",
+            "options": [
+              "Diabetes",
+              "Hypertension",
+              "Cancer",
+              "Not Sure"
+            ],
+            "value": ""
+          }
+        ]
+      }
+    ]
+  }
+}

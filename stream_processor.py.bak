@@ -1,0 +1,559 @@
+"""
+ArcaQuest AWS Stream Processor
+================================
+
+Pipeline:
+  1. Load conversation + questionnaire from input JSON
+  2. Sliding-window chunk the conversation (4 turns, 1-turn overlap)
+  3. For each chunk:
+       a. Send ALL answerable fields (answered + unanswered) to the reranker
+       b. Pick top-4 ranked unanswered fields → try to answer (3-attempt retry)
+       c. Pick top-4 ranked answered fields with score ≥ CORRECTION_THRESHOLD
+          → re-evaluate; if new answer differs → UPDATE (patient self-correction)
+       d. Append chunk entry to outputs/chunks_log.json (overwritten each run)
+  4. Write final filled questionnaire to outputs/output_result.json
+
+Supported field types (all types from Lifestyle Payloads corpus):
+  radio, conditional, slider, frequency, textarea, number,
+  select, conditional_select, section (container), field_group (container),
+  time_range  [attempted; complex types skipped: table, grouped_table,
+               searchable_select, dependent_autofill, icon]
+
+LLM    : Amazon Nova Pro  (us.amazon.nova-pro-v1:0)
+Reranker: danielchalef/Qwen3-Reranker-4B-seq-cls-vllm-fixed
+"""
+
+import json
+import os
+import re
+import time
+import logging
+from typing import List
+
+import requests
+from dotenv import load_dotenv
+
+from field_handlers import (
+    flatten_all_fields,
+    field_to_reranker_doc,
+    build_answer_prompt,
+    clean_answer,
+    is_no_info,
+    is_complex_type,
+    COMPLEX_TYPES,
+)
+from config import get_model_config
+
+# ─── Load .env from the project root (same directory as this file)
+_DIR = os.path.dirname(os.path.abspath(__file__))
+load_dotenv(dotenv_path=os.path.join(_DIR, ".env"))
+
+# ─── Logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s  %(message)s",
+    datefmt="%H:%M:%S",
+)
+log = logging.getLogger(__name__)
+
+# ─── AWS / Nova Config
+API_KEY = os.getenv("BEDROCK_API_KEY")
+
+BEDROCK_HEADERS = {
+    "Authorization": f"Bearer {API_KEY}",
+    "Content-Type": "application/json",
+}
+
+# ─── Reranker Config
+RERANKER_API_KEY = "arcaai-reranker-key-2026"
+RERANKER_HEADERS = {
+    "Content-Type": "application/json",
+    "x-api-key": RERANKER_API_KEY,
+}
+
+# ─── Chunking Config
+CHUNK_SIZE    = 4   # speaker turns per chunk
+CHUNK_OVERLAP = 1   # overlapping turns between consecutive chunks
+TOP_K         = 4   # top-N questions to try per chunk
+
+# ─── Correction Config
+CORRECTION_THRESHOLD = 0.55  # min reranker score for re-evaluation of answered fields
+
+# ─── Output paths
+OUTPUTS_DIR    = os.path.join(_DIR, "outputs")
+CHUNKS_LOG_FILE = os.path.join(OUTPUTS_DIR, "chunks_log.json")
+OUTPUT_FILE     = os.path.join(OUTPUTS_DIR, "output_result.json")
+
+os.makedirs(OUTPUTS_DIR, exist_ok=True)
+
+
+# ============================================================================
+# 1.  Nova LLM wrapper
+# ============================================================================
+
+def nova(prompt: str, max_tokens: int = 512, temperature: float = 0.0) -> str:
+    """Call Amazon Nova Pro via the Bedrock converse API."""
+    cfg = get_model_config()
+    url = (
+        f"https://bedrock-runtime.{cfg['region']}.amazonaws.com"
+        f"/model/{cfg['nova_model']}/converse"
+    )
+    payload = {
+        "messages": [{"role": "user", "content": [{"text": prompt}]}],
+        "inferenceConfig": {
+            "temperature": temperature,
+            "topP": 0.1,
+            "maxTokens": max_tokens,
+        },
+    }
+    r = requests.post(url, json=payload, headers=BEDROCK_HEADERS, timeout=60)
+    r.raise_for_status()
+    answer = ""
+    for part in r.json()["output"]["message"]["content"]:
+        if "text" in part:
+            answer += part["text"]
+    return answer.strip()
+
+
+# ============================================================================
+# 2.  Reranker wrapper
+# ============================================================================
+
+def call_reranker(query: str, documents: List[str]) -> List[dict]:
+    """
+    POST to the reranker API.
+    Returns list sorted by relevance_score descending:
+      [{"index": <int>, "relevance_score": <float>}, ...]
+    """
+    cfg = get_model_config()
+    payload = {
+        "model": cfg["reranker_model"],
+        "query": query,
+        "documents": documents,
+    }
+    try:
+        r = requests.post(
+            cfg["reranker_url"], json=payload, headers=RERANKER_HEADERS, timeout=30
+        )
+        r.raise_for_status()
+        results = r.json().get("results", [])
+        return sorted(results, key=lambda x: x.get("relevance_score", 0), reverse=True)
+    except Exception as exc:
+        log.error(f"  Reranker API error: {exc}")
+        return []
+
+
+# ============================================================================
+# 3.  Chunker
+# ============================================================================
+
+def create_chunks(
+    conversation: List[dict],
+    chunk_size: int = CHUNK_SIZE,
+    overlap: int = CHUNK_OVERLAP,
+) -> List[List[dict]]:
+    """
+    Sliding-window chunker on conversation turns.
+    Each 'turn': {"speaker": ..., "message": ...}
+
+    Example (chunk_size=4, overlap=1, step=3):
+      chunk 1 → turns [0,1,2,3]
+      chunk 2 → turns [3,4,5,6]
+    """
+    step   = chunk_size - overlap
+    chunks = []
+    for i in range(0, len(conversation), step):
+        chunk = conversation[i : i + chunk_size]
+        if chunk:
+            chunks.append(chunk)
+    return chunks
+
+
+def chunk_to_text(chunk: List[dict]) -> str:
+    """Convert a chunk (list of turn dicts) into a plain-text string."""
+    return "\n".join(
+        f"{turn.get('speaker', 'unknown').capitalize()}: {turn.get('message', '')}"
+        for turn in chunk
+    )
+
+
+# ============================================================================
+# 4.  Answer helpers  (3-attempt retry with exponential back-off on 429)
+# ============================================================================
+
+def _is_rate_limit(exc: Exception) -> bool:
+    if hasattr(exc, "response") and exc.response is not None:
+        return exc.response.status_code == 429
+    return "429" in str(exc)
+
+
+def try_answer_field(chunk_text: str, field: dict, max_attempts: int = 3) -> str:
+    """
+    Attempt to answer a field using a direct Nova Pro call.
+    Returns the cleaned answer string, or 'No information found'.
+    """
+    label  = field.get("label", "")
+    prompt = build_answer_prompt(chunk_text, field)
+
+    for attempt in range(1, max_attempts + 1):
+        try:
+            raw_answer = nova(prompt)
+            if raw_answer and not is_no_info(raw_answer):
+                answer = clean_answer(raw_answer, field)
+                log.info(f"      [OK] Attempt {attempt} → '{label}': {answer}")
+                return answer
+            log.warning(f"      [--] Attempt {attempt}: No info for '{label}', retrying...")
+        except Exception as exc:
+            if _is_rate_limit(exc):
+                delay = 2 ** attempt
+                log.warning(
+                    f"      [429] Rate limit on attempt {attempt} for '{label}'. "
+                    f"Backing off {delay}s..."
+                )
+                time.sleep(delay)
+            else:
+                log.error(f"      [ERR] Attempt {attempt} error for '{label}': {exc}")
+
+    log.warning(f"      [FAIL] All {max_attempts} attempts failed for '{label}'")
+    return "No information found"
+
+
+def try_answer_subfield(chunk_text: str, field: dict, max_attempts: int = 3) -> None:
+    """
+    If a conditional field was answered 'Yes', attempt to fill its subField.
+    Modifies subField['value'] in place.
+    """
+    conditions    = field.get("conditions", [])
+    yes_condition = next(
+        (c for c in conditions if c.get("label", "").lower() == "yes"), None
+    )
+    if not yes_condition or "subField" not in yes_condition:
+        return
+
+    sf         = yes_condition["subField"]
+    sub_label  = sf.get("label", "")
+    min_v      = sf.get("min", 0)
+    max_v      = sf.get("max", 10)
+    main_label = field.get("label", "")
+
+    prompt = (
+        f"Context:\n{chunk_text}\n\n"
+        f"The patient confirmed: '{main_label}' = Yes.\n"
+        f"Now determine: {sub_label}\n"
+        f"Return only a number between {min_v} and {max_v} if mentioned.\n"
+        f"Otherwise respond with exactly: No information found\n\nAnswer:"
+    )
+
+    for attempt in range(1, max_attempts + 1):
+        try:
+            raw_answer = nova(prompt)
+            if raw_answer and not is_no_info(raw_answer):
+                cleaned = clean_answer(raw_answer, sf)
+                sf["value"] = cleaned
+                log.info(f"         [OK] SubField '{sub_label}' → {cleaned}")
+                return
+            log.warning(f"         [--] SubField attempt {attempt} for '{sub_label}': No info")
+        except Exception as exc:
+            if _is_rate_limit(exc):
+                delay = 2 ** attempt
+                log.warning(
+                    f"         [429] Rate limit on subfield '{sub_label}'. "
+                    f"Backing off {delay}s..."
+                )
+                time.sleep(delay)
+            else:
+                log.error(f"         [ERR] SubField attempt {attempt} error: {exc}")
+
+    sf["value"] = "No information found"
+    log.warning(f"         [FAIL] SubField '{sub_label}' → No information found")
+
+
+# ============================================================================
+# 5.  Chunks log persistence
+# ============================================================================
+
+def _save_chunks_log(chunks_log: list) -> None:
+    with open(CHUNKS_LOG_FILE, "w", encoding="utf-8") as f:
+        json.dump(chunks_log, f, indent=2, ensure_ascii=False)
+
+
+# ============================================================================
+# 6.  Complex-type field audit
+# ============================================================================
+
+def _collect_complex_fields(questions: List[dict]) -> List[dict]:
+    """
+    Walk the question tree and return every field that is a complex type
+    (table, grouped_table, searchable_select, dependent_autofill, icon).
+    These are skipped by the reranker loop and flagged in the output.
+    """
+    complex_fields = []
+
+    def _walk(fields):
+        for field in fields:
+            ft = field.get("type", "")
+            if ft in COMPLEX_TYPES:
+                complex_fields.append(field)
+            elif ft in ("section", "field_group"):
+                _walk(field.get("fields", []))
+
+    for group in questions:
+        _walk(group.get("fields", []))
+        for section in group.get("sections", []):
+            _walk(section.get("fields", []))
+
+    return complex_fields
+
+
+# ============================================================================
+# 7.  Main workflow
+# ============================================================================
+
+def run_workflow(input_json_path: str) -> dict:
+    log.info("=" * 60)
+    log.info("START  ArcaQuest Stream Processor")
+    log.info("=" * 60)
+
+    # ── Load input ────────────────────────────────────────────────────────────
+    with open(input_json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    conversation = data.get("conversation", [])
+    questions    = data.get("summary", {}).get("questions", [])
+
+    if not conversation:
+        log.error("No conversation found in input JSON. Aborting.")
+        return data
+
+    log.info(f"Loaded conversation : {len(conversation)} turns")
+
+    # ── Flatten answerable fields  ────────────────────────────────────────────
+    all_fields = flatten_all_fields(questions)
+    for field in all_fields:
+        field["value"] = ""   # reset all values for a clean run
+
+    # Identify and log complex fields that will be skipped
+    complex_fields = _collect_complex_fields(questions)
+
+    log.info(f"Answerable fields   : {len(all_fields)}")
+    if complex_fields:
+        log.info(
+            f"Complex fields      : {len(complex_fields)} "
+            f"(skipped — require UI/API interaction)"
+        )
+        for cf in complex_fields:
+            log.info(f"   [SKIP-COMPLEX] {cf.get('id')} ({cf.get('type')}) — {cf.get('label','')}")
+
+    # ── Chunk the conversation  ───────────────────────────────────────────────
+    chunks = create_chunks(conversation)
+    log.info(f"Chunks              : {len(chunks)}  (size={CHUNK_SIZE}, overlap={CHUNK_OVERLAP})")
+
+    # Fresh chunks log
+    chunks_log: list = []
+    _save_chunks_log(chunks_log)
+
+    # ── Process each chunk  ───────────────────────────────────────────────────
+    for chunk_idx, chunk in enumerate(chunks):
+        chunk_num  = chunk_idx + 1
+        chunk_text = chunk_to_text(chunk)
+
+        log.info(f"\n{'-' * 55}")
+        log.info(f"CHUNK {chunk_num}/{len(chunks)}  ({len(chunk)} turns)")
+        log.info(chunk_text)
+
+        # Separate unanswered vs answered fields
+        unanswered = [
+            f for f in all_fields
+            if not f.get("value") or f["value"] == ""
+        ]
+        answered = [
+            f for f in all_fields
+            if f.get("value") and f["value"] not in ("", "No information found")
+        ]
+
+        combined_fields = unanswered + answered
+        combined_docs   = [field_to_reranker_doc(f) for f in combined_fields]
+
+        log.info(
+            f"   Reranker: query=chunk_text | "
+            f"{len(unanswered)} unanswered + {len(answered)} answered fields"
+        )
+        reranker_results = call_reranker(query=chunk_text, documents=combined_docs)
+
+        # ── Split results: unanswered (answering) vs answered (correction)
+        unanswered_ranked      = []
+        correction_candidates  = []
+
+        for res in reranker_results:
+            idx   = res.get("index", -1)
+            score = res.get("relevance_score", 0.0)
+            if not (0 <= idx < len(combined_fields)):
+                continue
+            field = combined_fields[idx]
+            doc   = combined_docs[idx]
+            is_answered = (
+                field.get("value")
+                and field["value"] not in ("", "No information found")
+            )
+            if is_answered:
+                if score >= CORRECTION_THRESHOLD:
+                    correction_candidates.append({"field": field, "score": score, "doc": doc})
+            else:
+                unanswered_ranked.append({"field": field, "score": score, "doc": doc})
+
+        top_unanswered  = unanswered_ranked[:TOP_K]
+        top_corrections = correction_candidates[:TOP_K]
+
+        log.info(f"   Top {len(top_unanswered)} unanswered to try answering:")
+        for i, tf in enumerate(top_unanswered):
+            log.info(
+                f"      #{i + 1}  [score={tf['score']:.4f}]  "
+                f"[{tf['field'].get('type')}]  {tf['field']['label']}"
+            )
+        if top_corrections:
+            log.info(
+                f"   Correction candidates ({len(top_corrections)} answered, "
+                f"score≥{CORRECTION_THRESHOLD}):"
+            )
+            for tf in top_corrections:
+                log.info(
+                    f"      [score={tf['score']:.4f}]  {tf['field']['label']} "
+                    f"= '{tf['field']['value']}'"
+                )
+
+        # Build chunk log entry
+        chunk_log_entry = {
+            "chunk_number": chunk_num,
+            "turns": [
+                {"speaker": t.get("speaker"), "message": t.get("message")}
+                for t in chunk
+            ],
+            "chunk_text": chunk_text,
+            "unanswered_count": len(unanswered),
+            "answered_count":   len(answered),
+            "reranker_top_unanswered": [
+                {
+                    "rank": i + 1,
+                    "score": round(tf["score"], 4),
+                    "field_id": tf["field"].get("id"),
+                    "field_type": tf["field"].get("type"),
+                    "label": tf["field"]["label"],
+                }
+                for i, tf in enumerate(top_unanswered)
+            ],
+            "reranker_correction_candidates": [
+                {
+                    "score": round(tf["score"], 4),
+                    "field_id": tf["field"].get("id"),
+                    "field_type": tf["field"].get("type"),
+                    "label": tf["field"]["label"],
+                    "current_value": tf["field"]["value"],
+                }
+                for tf in top_corrections
+            ],
+            "answers_found": [],
+            "corrections":   [],
+        }
+
+        # ── Step A: Try to answer unanswered fields ───────────────────────────
+        for rank_idx, tf in enumerate(top_unanswered):
+            field = tf["field"]
+            label = field.get("label", "")
+
+            log.info(
+                f"\n   [ANSWER] Rank #{rank_idx + 1} "
+                f"[{field.get('type')}]: '{label}'"
+            )
+            answer = try_answer_field(chunk_text, field)
+
+            if answer and answer != "No information found":
+                field["value"] = answer
+
+                # Handle conditional subfield (Yes → cups per day, etc.)
+                if field.get("type") == "conditional" and answer.lower() == "yes":
+                    try_answer_subfield(chunk_text, field)
+
+                chunk_log_entry["answers_found"].append({
+                    "rank": rank_idx + 1,
+                    "field_id": field.get("id"),
+                    "field_type": field.get("type"),
+                    "label": label,
+                    "answer": answer,
+                })
+                log.info(f"   ANSWERED: '{label}' = {answer}")
+            else:
+                log.info(f"   NO ANSWER rank #{rank_idx + 1} → trying next...")
+
+        # ── Step B: Check correction candidates ──────────────────────────────
+        for tf in top_corrections:
+            field         = tf["field"]
+            score         = tf["score"]
+            label         = field.get("label", "")
+            current_value = field.get("value", "")
+
+            log.info(
+                f"\n   [CORRECTION CHECK] '{label}' "
+                f"current='{current_value}' | score={score:.4f}"
+            )
+            new_answer = try_answer_field(chunk_text, field)
+
+            if new_answer and new_answer != "No information found":
+                if new_answer.strip().lower() != current_value.strip().lower():
+                    log.info(
+                        f"   CORRECTION: '{label}' | '{current_value}' → '{new_answer}'"
+                    )
+                    field["value"] = new_answer
+
+                    if field.get("type") == "conditional" and new_answer.lower() == "yes":
+                        try_answer_subfield(chunk_text, field)
+
+                    chunk_log_entry["corrections"].append({
+                        "field_id": field.get("id"),
+                        "field_type": field.get("type"),
+                        "label": label,
+                        "old_answer": current_value,
+                        "new_answer": new_answer,
+                    })
+                else:
+                    log.info(f"   RE-EVAL: same answer '{new_answer}' — no update")
+            else:
+                log.info(f"   RE-EVAL: no info returned — keeping '{current_value}'")
+
+        # Save chunk log entry
+        chunks_log.append(chunk_log_entry)
+        _save_chunks_log(chunks_log)
+        log.info(f"   Chunk {chunk_num} saved to chunks_log.json")
+
+    # ── Save final output ─────────────────────────────────────────────────────
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+    # ── Summary ───────────────────────────────────────────────────────────────
+    answered_fields   = [
+        f for f in all_fields
+        if f.get("value") and f["value"] not in ("", "No information found")
+    ]
+    unanswered_fields = [
+        f for f in all_fields
+        if not f.get("value") or f["value"] in ("", "No information found")
+    ]
+    total_corrections = sum(len(e.get("corrections", [])) for e in chunks_log)
+
+    log.info(f"\n{'=' * 60}")
+    log.info("DONE  ArcaQuest Stream Processor")
+    log.info(f"   Answered    : {len(answered_fields)}/{len(all_fields)} fields")
+    log.info(f"   Corrections : {total_corrections} answer(s) updated by patient self-correction")
+    log.info(f"   Unanswered  : {len(unanswered_fields)} fields")
+    if unanswered_fields:
+        for f in unanswered_fields:
+            log.info(f"     * {f.get('id')} [{f.get('type')}] - {f.get('label')}")
+    if complex_fields:
+        log.info(
+            f"   Skipped     : {len(complex_fields)} complex fields "
+            f"(table/grouped_table/etc. — require manual review)"
+        )
+    log.info(f"   Output      : {OUTPUT_FILE}")
+    log.info(f"   Chunks log  : {CHUNKS_LOG_FILE}")
+    log.info(f"{'=' * 60}")
+
+    return data

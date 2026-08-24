@@ -1,0 +1,358 @@
+{
+  "conversation": [
+    {
+      "speaker": "doctor",
+      "message": "Hello, I’d like to ask you a few questions about your attitude towards healthy eating."
+    },
+    {
+      "speaker": "patient",
+      "message": "Sure, please go ahead."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Do you like eating healthy food?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Yes, I do."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Can you tell me the reason for your choice?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Well, I know that healthy food is good for my health."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Is healthy food available in your area?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Yes, it is available."
+    },
+    {
+      "speaker": "doctor",
+      "message": "And how about affordability—would you say it fits within your budget?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I haven’t specified that."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Understood. When you eat healthy food, how do you feel subjectively?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Honestly, I don’t feel better."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Do you see any clinical improvements in your health parameters?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Yes, my health parameters are improving."
+    },
+    {
+      "speaker": "doctor",
+      "message": "And finally, do you have strong social support in maintaining healthy eating habits?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I haven’t mentioned that."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Thanks, that helps understand your perspective on healthy eating. Now, let’s talk about changes you’d like to make. Could you share the top three nutritional changes you want to work on?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I haven’t specified the exact changes."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Alright—on a scale of 0 to 10, how important is your first change?"
+    },
+    {
+      "speaker": "patient",
+      "message": "About 5."
+    },
+    {
+      "speaker": "doctor",
+      "message": "And how confident are you about making this change?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Around 3."
+    },
+    {
+      "speaker": "doctor",
+      "message": "What about the second change—how important is that to you?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I’d rate it 4."
+    },
+    {
+      "speaker": "doctor",
+      "message": "And how confident are you for the second one?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Around 6."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Now, for the third change—how important is it for you?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I’d say 4."
+    },
+    {
+      "speaker": "doctor",
+      "message": "And your confidence level for making the third change?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Quite high, about 9."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Great, thank you for sharing your thoughts and goals related to nutrition."
+    }
+  ],
+  "summary": {
+    "questions": [
+      {
+        "id": "attitude",
+        "title": "Attitude",
+        "icon": "attitude",
+        "fields": [
+          {
+            "id": "eating_healthy_food",
+            "label": "Do you like eating healthy food?",
+            "type": "radio",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "required": true,
+            "value": ""
+          },
+          {
+            "id": "reason_for_choice",
+            "label": "Reason for your choice",
+            "type": "section",
+            "fields": [
+              {
+                "id": "knowledge_of_healthy_food",
+                "label": "Knowledge of healthy food",
+                "type": "radio",
+                "options": [
+                  "It is good for my health",
+                  "I am not sure about the health benefits"
+                ],
+                "value": ""
+              },
+              {
+                "id": "availability_of_healthy_food",
+                "label": "Availability of healthy food",
+                "type": "radio",
+                "options": [
+                  "It is available in my area",
+                  "It is not available in my area"
+                ],
+                "value": ""
+              },
+              {
+                "id": "affordability_of_healthy_food",
+                "label": "Affordability of healthy food",
+                "type": "radio",
+                "options": [
+                  "It is within my budget",
+                  "It is not within my budget"
+                ],
+                "value": ""
+              },
+              {
+                "id": "subjective_feeling",
+                "label": "Subjective Feeling",
+                "type": "radio",
+                "options": [
+                  "I feel better",
+                  "I don't feel better"
+                ],
+                "value": ""
+              },
+              {
+                "id": "clinical_improvement",
+                "label": "Clinical Improvement",
+                "type": "radio",
+                "options": [
+                  "My health parameters are improving",
+                  "My health parameters are not improving"
+                ],
+                "value": ""
+              },
+              {
+                "id": "social_support",
+                "label": "Social Support",
+                "type": "radio",
+                "options": [
+                  "I have a strong social support",
+                  "I do not have a strong social support"
+                ],
+                "value": ""
+              }
+            ],
+            "value": {
+              "fields": [
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "id": "nutritional_changes_ranking",
+            "label": "Rank the top 3 nutritional changes you want to make",
+            "type": "section",
+            "fields": [
+              {
+                "id": "nutritional_change_1",
+                "label": "Nutritional Change 1",
+                "type": "textarea",
+                "placeholder": "",
+                "value": ""
+              },
+              {
+                "id": "importance_change_1",
+                "label": "How important is it for you to make the change?",
+                "type": "slider",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "description": "(0=not important to 10=very important)",
+                "value": ""
+              },
+              {
+                "id": "confidence_change_1",
+                "label": "How confident are you to make the change?",
+                "type": "slider",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "description": "(0=not confident to 10=very confident)",
+                "value": ""
+              },
+              {
+                "id": "nutritional_change_2",
+                "label": "Nutritional Change 2",
+                "type": "textarea",
+                "placeholder": "",
+                "value": ""
+              },
+              {
+                "id": "importance_change_2",
+                "label": "How important is it for you to make the change?",
+                "type": "slider",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "description": "(0=not important to 10=very important)",
+                "value": ""
+              },
+              {
+                "id": "confidence_change_2",
+                "label": "How confident are you to make the change?",
+                "type": "slider",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "description": "(0=not confident to 10=very confident)",
+                "value": ""
+              },
+              {
+                "id": "nutritional_change_3",
+                "label": "Nutritional Change 3",
+                "type": "textarea",
+                "placeholder": "",
+                "value": ""
+              },
+              {
+                "id": "importance_change_3",
+                "label": "How important is it for you to make the change?",
+                "type": "slider",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "description": "(0=not important to 10=very important)",
+                "value": ""
+              },
+              {
+                "id": "confidence_change_3",
+                "label": "How confident are you to make the change?",
+                "type": "slider",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "description": "(0=not confident to 10=very confident)",
+                "value": ""
+              }
+            ],
+            "value": {
+              "fields": [
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "conversation": [
+    {
+      "speaker": "doctor",
+      "message": "Hello, I’d like to ask you some questions about your food intake habits.How many cups tea and coffe in a day?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Sure, please go ahead. I drink tea 2 cups"
+    },
+    {
+      "speaker": "doctor",
+      "message": "How many major meals do you usually have in a day?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I usually have three major meals."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Do you also take snacks between meals?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Yes, I take two snacks per day."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Alright. Which meal do you most often skip or miss in a day?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I tend to skip breakfast when I’m busy."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Understood. And how many meals do you usually eat together with your family?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Normally one meal a day, usually dinner."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Do you eat meals while watching TV?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Sometimes, about one meal per day."
+    },
+    {
+      "speaker": "doctor",
+      "message": "How would you rate the taste of your meals on a scale of 0 to 10?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I’d say around 7."
+    },
+    {
+      "speaker": "doctor",
+      "message": "And what about satiety, how filling are your meals on the same scale?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I’d rate them as 8."
+    },
+    {
+      "speaker": "doctor",
+      "message": "That gives me a good picture of your eating habits. Thank you."
+    }
+  ],
+  "summary": {
+    "questions": [
+      {
+        "id": "food_intake",
+        "title": "Food intake patterns",
+        "icon": "material-symbols:dining-outline",
+        "fields": [
+          {
+            "id": "major_meals_per_day",
+            "label": "Number of major meals per day",
+            "type": "radio",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "Other"
+            ],
+            "allowOtherSpecify": true,
+            "modal": {
+              "title": "Meals per day",
+              "inputType": "number"
+            },
+            "value": ""
+          },
+          {
+            "id": "snacks_per_day",
+            "label": "Number of snacks per day",
+            "type": "radio",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "value": ""
+          },
+          {
+            "id": "missed_meal",
+            "label": "Which meal do you skip/miss most often in a day?",
+            "type": "radio",
+            "options": [
+              "Breakfast",
+              "Lunch",
+              "Dinner",
+              "Others"
+            ],
+            "allowOtherSpecify": true,
+            "modal": {
+              "title": "Meal Type",
+              "inputType": "text"
+            },
+            "value": ""
+          },
+          {
+            "id": "family_meals",
+            "label": "How many meals do you eat with family in a day?",
+            "type": "radio",
+            "options": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "value": ""
+          },
+          {
+            "id": "tv_meals",
+            "label": "How many meals do you eat while watching TV in a day?",
+            "type": "radio",
+            "options": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "value": ""
+          },
+          {
+            "id": "taste_rating",
+            "label": "How do you rate the taste of your meals?",
+            "type": "slider",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "description": "(0=Unpleasant to 10=Delicious)",
+            "value": ""
+          },
+          {
+            "id": "satiety_rating",
+            "label": "How do you rate the satiety of your meals?",
+            "type": "slider",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "description": "(0=Not filling to 10=Overly full)",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "id": "beverage_intake",
+        "title": "Beverage intake patterns",
+        "icon": "material-symbols:coffee-outline-rounded",
+        "fields": [
+          {
+            "id": "tea",
+            "label": "Tea",
+            "type": "conditional",
+            "conditions": [
+              {
+                "label": "Yes",
+                "subField": {
+                  "id": "tea_cups_per_day",
+                  "label": "Cups per Day",
+                  "type": "number",
+                  "min": 1,
+                  "max": 10,
+                  "value": ""
+                }
+              },
+              {
+                "label": "No"
+              }
+            ],
+            "value": ""
+          },
+          {
+            "id": "coffee",
+            "label": "Coffee",
+            "type": "conditional",
+            "conditions": [
+              {
+                "label": "Yes",
+                "subField": {
+                  "id": "coffee_cups_per_day",
+                  "label": "Cups per Day",
+                  "type": "number",
+                  "min": 1,
+                  "max": 10,
+                  "value": ""
+                }
+              },
+              {
+                "label": "No"
+              }
+            ],
+            "value": ""
+          }
+        ]
+      }
+    ]
+  }
+}

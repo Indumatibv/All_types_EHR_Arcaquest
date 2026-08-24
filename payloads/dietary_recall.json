@@ -1,0 +1,193 @@
+{
+  "conversation": [
+    {
+      "speaker": "doctor",
+      "message": "Let's go through your 24-hour dietary recall."
+    },
+    {
+      "speaker": "patient",
+      "message": "For breakfast, you had Afghani chicken — two plates — and Al yakhani — two bowls."
+    },
+    {
+      "speaker": "doctor",
+      "message": "During mid-morning, you had one bowl of almond soup and two cups of apple and honey sorbet."
+    },
+    {
+      "speaker": "patient",
+      "message": "For lunch, you had one jar of fermented bamboo shoot pickle (mesu pickle)."
+    },
+    {
+      "speaker": "doctor",
+      "message": "In the evening, you had three saffron biscuits."
+    },
+    {
+      "speaker": "patient",
+      "message": "At dinner, you had two bowls of almond soup."
+    },
+    {
+      "speaker": "doctor",
+      "message": "For post-dinner snacks, you had one plate of handi chicken."
+    },
+    {
+      "speaker": "patient",
+      "message": "Regarding your daily intake, you reported sugar consumption of 20 grams per day, salt intake of 30 grams per day, and oil usage of 40 milliliters per day."
+    }
+  ],
+  "summary": {
+    "questions": [
+      {
+        "id": "dietary_recall",
+        "title": "24 hour Dietary Recall",
+        "icon": "mdi:clock-outline",
+        "fields": [
+          {
+            "id": "dietary_table",
+            "label": "Food Intake",
+            "type": "grouped_table",
+            "headers": [
+              {
+                "id": "time_range",
+                "label": "Timings",
+                "type": "time_range"
+              },
+              {
+                "id": "food_item",
+                "label": "Food Consumed",
+                "type": "searchable_select",
+                "placeholder": "Search for food...",
+                "fetchOptions": {
+                  "endpoint": "/nutrition/v0.1/food/list",
+                  "method": "GET",
+                  "queryParam": "input",
+                  "responseMapper": {
+                    "valuePath": "id",
+                    "labelPath": "name"
+                  }
+                }
+              },
+              {
+                "id": "serving_type",
+                "label": "Serving Type",
+                "type": "dependent_autofill",
+                "dependsOn": "food_item",
+                "fetchDependentData": {
+                  "endpoint": "/nutrition/v0.1/food/serving-unit",
+                  "method": "GET",
+                  "paramName": "name",
+                  "fieldMapping": {
+                    "serving_type": "servingUnitId"
+                  }
+                }
+              },
+              {
+                "id": "quantity",
+                "label": "Quantity",
+                "type": "number",
+                "min": 1
+              },
+              {
+                "id": "icon",
+                "label": "",
+                "type": "icon"
+              }
+            ],
+            "groupBy": "meal",
+            "mealGroups": [
+              {
+                "id": "breakfast",
+                "label": "Breakfast",
+                "defaultRows": []
+              },
+              {
+                "id": "midMorning",
+                "label": "Mid-morning",
+                "defaultRows": []
+              },
+              {
+                "id": "lunch",
+                "label": "Lunch",
+                "defaultRows": []
+              },
+              {
+                "id": "eveningSnacks",
+                "label": "Evening snacks",
+                "defaultRows": []
+              },
+              {
+                "id": "dinner",
+                "label": "Dinner",
+                "defaultRows": []
+              },
+              {
+                "id": "post_dinner_snacks",
+                "label": "Post-dinner snacks",
+                "defaultRows": []
+              }
+            ],
+            "value": [
+              {
+                "id": "breakfast",
+                "label": "Breakfast",
+                "rows": []
+              },
+              {
+                "id": "midMorning",
+                "label": "Mid-morning",
+                "rows": []
+              },
+              {
+                "id": "lunch",
+                "label": "Lunch",
+                "rows": []
+              },
+              {
+                "id": "eveningSnacks",
+                "label": "Evening snacks",
+                "rows": []
+              },
+              {
+                "id": "dinner",
+                "label": "Dinner",
+                "rows": []
+              },
+              {
+                "id": "post_dinner_snacks",
+                "label": "Post-dinner snacks",
+                "rows": []
+              }
+            ]
+          },
+          {
+            "id": "general_intake",
+            "type": "field_group",
+            "fields": [
+              {
+                "id": "sugar_mg",
+                "label": "Sugar (gm/d):",
+                "type": "number",
+                "value": ""
+              },
+              {
+                "id": "salt_mg",
+                "label": "Salt (gm/d):",
+                "type": "number",
+                "value": ""
+              },
+              {
+                "id": "oil_ml",
+                "label": "Oil (ml/d):",
+                "type": "number",
+                "value": ""
+              }
+            ],
+            "value": {
+              "sugar_mg": "",
+              "salt_mg": "",
+              "oil_ml": ""
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

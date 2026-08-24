@@ -1,0 +1,353 @@
+{
+  "conversation": [
+    {
+      "speaker": "doctor",
+      "message": "Hello, I’d like to ask you some questions about your physical activity habits."
+    },
+    {
+      "speaker": "patient",
+      "message": "Sure, please go ahead."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Can you tell me what types of exercise activities you engage in?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I usually do strength and flexibility exercises."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Let’s start with strength activities. What type specifically?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I do free weight exercises."
+    },
+    {
+      "speaker": "doctor",
+      "message": "How often do you do this activity?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Three times a week."
+    },
+    {
+      "speaker": "doctor",
+      "message": "And what is the intensity level for this?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I’d say mild."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Noted. Now coming to flexibility exercises—what do you usually do?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I mostly do static stretching."
+    },
+    {
+      "speaker": "doctor",
+      "message": "What’s the intensity for this one?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Moderate."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Do you have a specific frequency or duration for flexibility exercises?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I haven’t fixed a frequency or duration for that yet."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Alright. Do you do any other types of physical activities like aerobics or balance-focused workouts?"
+    },
+    {
+      "speaker": "patient",
+      "message": "No, not regularly—just the strength and flexibility ones for now."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Thanks, that helps understand your current physical activity pattern."
+    }
+  ],
+  "summary": {
+    "questions": [
+      {
+        "id": "exercise_patterns",
+        "title": "Exercise Patterns",
+        "icon": "dumbbell",
+        "fields": [
+          {
+            "id": "exercise_table",
+            "label": "Exercise Activities",
+            "type": "table",
+            "headers": [
+              {
+                "id": "activity_type",
+                "label": "Activity Type",
+                "type": "select",
+                "options": [
+                  "Aerobics",
+                  "Strength",
+                  "Flexibility",
+                  "Balance"
+                ]
+              },
+              {
+                "id": "activity",
+                "label": "Activity",
+                "type": "conditional_select",
+                "dependsOn": "activity_type",
+                "options": {
+                  "Aerobics": [
+                    "Walking",
+                    "Jogging",
+                    "Running",
+                    "Cycling",
+                    "Swimming",
+                    "Dancing",
+                    "Zumba",
+                    "Skipping Rope",
+                    "Kickboxing",
+                    "Rowing",
+                    "Hiking",
+                    "Stair Climbing",
+                    "Sports-Cricket",
+                    "Sports-Basketball",
+                    "Sports-Soccer",
+                    "Sports-Badminton",
+                    "Sports-Tennis"
+                  ],
+                  "Strength": [
+                    "Body Weight Exercises",
+                    "Free Weight Exercises",
+                    "Machine Based Exercise",
+                    "Resistance Band Exercise",
+                    "Functional Strenght Exercise"
+                  ],
+                  "Flexibility": [
+                    "Static Stretching",
+                    "Dynamic Stretching",
+                    "Yoga poses",
+                    "Pilates based flexibility"
+                  ],
+                  "Balance": [
+                    "Basic Balance Exercise",
+                    "Balance Enhancing Yoga Poses",
+                    "Advanced/Functional Balance Exercise",
+                    "Sports Specific or dynamic Balance drills"
+                  ]
+                }
+              },
+              {
+                "id": "duration",
+                "label": "Duration(min)",
+                "type": "number"
+              },
+              {
+                "id": "intensity",
+                "label": "Intensity",
+                "type": "conditional_select",
+                "dependsOn": "activity",
+                "options": {
+                  "Zumba": [
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Skipping Rope": [
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Kickboxing": [
+                    "Intense"
+                  ],
+                  "Rowing": [
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Hiking": [
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Sports-Cricket": [
+                    "Moderate"
+                  ],
+                  "Sports-Badminton": [
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Sports-Tennis": [
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Body Weight Exercises": [
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Free Weight Exercises": [
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Machine Based Exercise": [
+                    "Intense"
+                  ],
+                  "Functional Strenght Exercise": [
+                    "Mild",
+                    "Intense"
+                  ],
+                  "Static Stretching": [
+                    "Mild"
+                  ],
+                  "Dynamic Stretching": [
+                    "Mild"
+                  ],
+                  "Basic Balance Exercise": [
+                    "Mild"
+                  ],
+                  "Pilates based flexibility": [
+                    "Mild",
+                    "Moderate"
+                  ],
+                  "Walking": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Jogging": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Running": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Cycling": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Swimming": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Dancing": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Stair Climbing": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Sports-Basketball": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Sports-Soccer": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Yoga poses": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Balance Enhancing Yoga Poses": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Advanced/Functional Balance Exercise": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Sports Specific or dynamic Balance drills": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ],
+                  "Resistance Band Exercise": [
+                    "Mild",
+                    "Moderate",
+                    "Intense"
+                  ]
+                }
+              },
+              {
+                "id": "frequency",
+                "label": "Frequency",
+                "type": "select",
+                "options": [
+                  "Daily",
+                  "Three days a week",
+                  "Four days a week",
+                  "Five days a week",
+                  "Six days a week"
+                ]
+              },
+              {
+                "id": "days",
+                "label": "Days",
+                "type": "conditional_select",
+                "dependsOn": "frequency",
+                "options": {
+                  "Three days a week": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                  ],
+                  "Four days a week": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                  ],
+                  "Five days a week": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                  ],
+                  "Six days a week": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                  ]
+                }
+              }
+            ],
+            "value": []
+          }
+        ]
+      }
+    ]
+  }
+}

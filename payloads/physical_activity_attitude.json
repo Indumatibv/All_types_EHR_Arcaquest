@@ -1,0 +1,266 @@
+{
+  "conversation": [
+    {
+      "speaker": "doctor",
+      "message": "Let's discuss your attitude toward physical activity. You mentioned that you like to exercise."
+    },
+    {
+      "speaker": "patient",
+      "message": "When asked why, you said you are not sure about the health benefits of exercise."
+    },
+    {
+      "speaker": "doctor",
+      "message": "You shared that gyms are not available in your area, but you still find gym services within your budget."
+    },
+    {
+      "speaker": "patient",
+      "message": "You also said that you feel better after exercising, although your health parameters are not showing improvement yet."
+    },
+    {
+      "speaker": "doctor",
+      "message": "On the positive side, you have a strong social support system encouraging your exercise habits."
+    },
+    {
+      "speaker": "patient",
+      "message": "When ranking physical changes you want to make, you rated the importance of the first change as 5 out of 10 and your confidence to make it as 2 out of 10."
+    },
+    {
+      "speaker": "doctor",
+      "message": "For the second change, you rated the importance as 2 out of 10 and confidence as 6 out of 10."
+    },
+    {
+      "speaker": "patient",
+      "message": "For the third change, you rated the importance as 3 out of 10, though you did not specify your confidence level for this change."
+    }
+  ],
+  "summary": {
+    "questions": [
+      {
+        "id": "attitude",
+        "title": "Attitude",
+        "icon": "attitude",
+        "fields": [
+          {
+            "id": "exercise_preference",
+            "label": "Do you like doing exercise?",
+            "type": "radio",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "required": true,
+            "value": ""
+          },
+          {
+            "id": "reason_for_choice",
+            "label": "Reason for your choice",
+            "type": "section",
+            "fields": [
+              {
+                "id": "knowledge_of_exercise",
+                "label": "Knowledge of exercise",
+                "type": "radio",
+                "options": [
+                  "It is good for my health",
+                  "I am not sure about the health benefits"
+                ],
+                "value": ""
+              },
+              {
+                "id": "availability_of_gyms",
+                "label": "Availability of Gyms",
+                "type": "radio",
+                "options": [
+                  "It is available in my area",
+                  "It is not available in my area"
+                ],
+                "value": ""
+              },
+              {
+                "id": "affordability_of_gym",
+                "label": "Affordability of Gym",
+                "type": "radio",
+                "options": [
+                  "It is within my budget",
+                  "It is not within my budget"
+                ],
+                "value": ""
+              },
+              {
+                "id": "subjective_feeling_of_gym_workouts",
+                "label": "Subjective Feeling of Gym Workouts",
+                "type": "radio",
+                "options": [
+                  "I feel better",
+                  "I don't feel better"
+                ],
+                "value": ""
+              },
+              {
+                "id": "clinical_improvement",
+                "label": "Clinical Improvement through Gym Activity",
+                "type": "radio",
+                "options": [
+                  "My health parameters are improving",
+                  "My health parameters are not improving"
+                ],
+                "value": ""
+              },
+              {
+                "id": "social_support",
+                "label": "Social Support for Gym Attendance",
+                "type": "radio",
+                "options": [
+                  "I have a strong social support",
+                  "I do not have a strong social support"
+                ],
+                "value": ""
+              }
+            ],
+            "value": {
+              "fields": [
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ]
+            }
+          },
+          {
+            "id": "physical_changes",
+            "label": "Rank the top 3 physical changes you want to make",
+            "type": "section",
+            "fields": [
+              {
+                "id": "physical_change_1",
+                "label": "Physical Change 1",
+                "type": "textarea",
+                "placeholder": "Lorem ipsum dolor sit amet, c",
+                "value": ""
+              },
+              {
+                "id": "importance_1",
+                "label": "How important is it for you to make the change?",
+                "type": "slider",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "defaultValue": 1,
+                "value": ""
+              },
+              {
+                "id": "confidence_1",
+                "label": "How confident are you to make the change?",
+                "type": "slider",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "defaultValue": 1,
+                "value": ""
+              },
+              {
+                "id": "physical_change_2",
+                "label": "Physical Change 2",
+                "type": "textarea",
+                "placeholder": "Lorem ipsum dolor sit amet, c",
+                "value": ""
+              },
+              {
+                "id": "importance_2",
+                "label": "How important is it for you to make the change?",
+                "type": "slider",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "defaultValue": 1,
+                "value": ""
+              },
+              {
+                "id": "confidence_2",
+                "label": "How confident are you to make the change?",
+                "type": "slider",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "defaultValue": 1,
+                "value": ""
+              },
+              {
+                "id": "physical_change_3",
+                "label": "Physical Change 3",
+                "type": "textarea",
+                "placeholder": "Lorem ipsum dolor sit amet, c",
+                "value": ""
+              },
+              {
+                "id": "importance_3",
+                "label": "How important is it for you to make the change?",
+                "type": "slider",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "defaultValue": 1,
+                "value": ""
+              },
+              {
+                "id": "confidence_3",
+                "label": "How confident are you to make the change?",
+                "type": "slider",
+                "min": 0,
+                "max": 10,
+                "step": 1,
+                "defaultValue": 1,
+                "value": ""
+              }
+            ],
+            "value": {
+              "fields": [
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

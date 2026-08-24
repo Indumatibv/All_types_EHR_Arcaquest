@@ -1,0 +1,327 @@
+{
+  "conversation": [
+    {
+      "speaker": "doctor",
+      "message": "I’d like to ask you a few questions to check your knowledge about physical activity."
+    },
+    {
+      "speaker": "patient",
+      "message": "Sure, let’s go ahead."
+    },
+    {
+      "speaker": "doctor",
+      "message": "The benefit of exercise is all except?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I think it’s increase blood sugar."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Correct. Now, can you give me an example of aerobic exercise?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Swimming."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Good. What about an example of a strength training exercise?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Planks."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Right. Balance training is most beneficial for which group?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Older adults."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Yes. Which type of exercise is mainly aimed at improving flexibility?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Yoga."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Exactly. And do you know the minimum recommendation for moderate intensity aerobic activity in adults?"
+    },
+    {
+      "speaker": "patient",
+      "message": "150 minutes per week."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Great. How about the recommendation for strength training?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Twice per week."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Correct. Which of the following is a moderate intensity activity?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Gardening or brisk walking."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Good answer. What is the primary reason for warming up?"
+    },
+    {
+      "speaker": "patient",
+      "message": "To prepare muscles and reduce injury risks."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Exactly. Which material is best for workout clothing?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Polyester blends."
+    },
+    {
+      "speaker": "doctor",
+      "message": "That’s right. Walking after food is especially helpful in which condition?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Diabetes mellitus."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Correct. Which exercise helps in bone health?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Walking."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Yes. Which exercise increases muscle mass?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Strength training."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Exactly. Which exercise improves heart function?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Aerobic exercise."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Perfect. And lastly, what is the ideal food to eat before exercise?"
+    },
+    {
+      "speaker": "patient",
+      "message": "A banana."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Excellent. That completes the knowledge check—well done!"
+    }
+  ],
+  "summary": {
+    "questions": [
+      {
+        "id": "physical_activity_knowledge_questionnaire",
+        "title": "Physical Activity Knowledge Questionnaire",
+        "icon": "material-symbols:quiz-outline",
+        "fields": [
+          {
+            "id": "exercise_benefits",
+            "label": "The benefit of exercise is all except",
+            "type": "radio",
+            "options": [
+              "Increase blood sugar",
+              "Weight Reduction",
+              "Improve Immunity",
+              "Reduce Stress"
+            ],
+            "value": ""
+          },
+          {
+            "id": "aerobic_exercise_examples",
+            "label": "Examples of Aerobic Exercise",
+            "type": "radio",
+            "options": [
+              "Weight Lifting",
+              "Push up",
+              "Swimming",
+              "Yoga"
+            ],
+            "value": ""
+          },
+          {
+            "id": "strength_training_examples",
+            "label": "Examples of Strength Training exercise",
+            "type": "radio",
+            "options": [
+              "Cycling",
+              "Sprinting",
+              "Hill Climbing",
+              "Planks"
+            ],
+            "value": ""
+          },
+          {
+            "id": "balance_training_beneficial",
+            "label": "Balance Training is most beneficial for",
+            "type": "radio",
+            "options": [
+              "Adolescents",
+              "Office Workers",
+              "Older Adults",
+              "Endurance Athletes"
+            ],
+            "value": ""
+          },
+          {
+            "id": "flexibility_exercise_type",
+            "label": "Which type of exercise is primarily aimed at improving flexibility",
+            "type": "radio",
+            "options": [
+              "Swimming",
+              "Sprinting",
+              "Rowing",
+              "Yoga"
+            ],
+            "value": ""
+          },
+          {
+            "id": "moderate_aerobic_recommendation",
+            "label": "Minimum recommendation for moderate intensity aerobic activity in adults",
+            "type": "radio",
+            "options": [
+              "30 minutes per week",
+              "60 minutes per week",
+              "90 minutes per week",
+              "150 minutes per week"
+            ],
+            "value": ""
+          },
+          {
+            "id": "strength_training_recommendation",
+            "label": "Minimum recommendation for strength training in adults",
+            "type": "radio",
+            "options": [
+              "Once per week",
+              "Twice per week",
+              "Daily",
+              "Twice Daily"
+            ],
+            "value": ""
+          },
+          {
+            "id": "moderate_intensity_activity",
+            "label": "Which of the following is considered a moderate intensity activity",
+            "type": "radio",
+            "options": [
+              "Leisurely Walking",
+              "Gardening or Brisk Walking",
+              "Sprinting",
+              "Power Lifting"
+            ],
+            "value": ""
+          },
+          {
+            "id": "warm_up_reason",
+            "label": "What is the primary reason for warming up",
+            "type": "radio",
+            "options": [
+              "Increase Blood Pressure",
+              "Improve Sweat Production",
+              "Prepare Muscles & Reduce Injury Risks",
+              "Burn more Calories"
+            ],
+            "value": ""
+          },
+          {
+            "id": "workout_clothing_material",
+            "label": "Which material is best for workout clothing",
+            "type": "radio",
+            "options": [
+              "Wool",
+              "Cotton",
+              "Denim",
+              "Polyester Blends"
+            ],
+            "value": ""
+          },
+          {
+            "id": "walking_after_food_helpful",
+            "label": "Walking after food is helpful in patients with",
+            "type": "radio",
+            "options": [
+              "Heart Disease",
+              "Diabetes Mellitus",
+              "Elderly",
+              "Peptic Ulcer"
+            ],
+            "value": ""
+          },
+          {
+            "id": "bone_health_exercise",
+            "label": "Exercise that helps in bone health",
+            "type": "radio",
+            "options": [
+              "Walking",
+              "Swimming",
+              "Cycling",
+              "Yoga"
+            ],
+            "value": ""
+          },
+          {
+            "id": "muscle_mass_exercise",
+            "label": "Which exercises increases the muscle mass",
+            "type": "radio",
+            "options": [
+              "Aerobic Exercise",
+              "Flexibility Exercise",
+              "Strength Training",
+              "Balance Exercise"
+            ],
+            "value": ""
+          },
+          {
+            "id": "heart_function_exercise",
+            "label": "Exercise that improves heart function",
+            "type": "radio",
+            "options": [
+              "Aerobic Exercise",
+              "Flexibility Exercise",
+              "Strength Training",
+              "Balance Exercise"
+            ],
+            "value": ""
+          },
+          {
+            "id": "ideal_pre_exercise_food",
+            "label": "The ideal food to be eaten before exercise",
+            "type": "radio",
+            "options": [
+              "Fatty Food",
+              "Sugary Beverage",
+              "Banana",
+              "Raw Vegetables"
+            ],
+            "value": ""
+          }
+        ]
+      }
+    ]
+  }
+}

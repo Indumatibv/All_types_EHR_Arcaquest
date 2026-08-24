@@ -1,0 +1,3108 @@
+{
+  "conversation": [
+    {
+      "speaker": "doctor",
+      "message": "Let's talk about your daily food habits to understand your nutrition better."
+    },
+    {
+      "speaker": "patient",
+      "message": "Sure, I can share that."
+    },
+    {
+      "speaker": "doctor",
+      "message": "How often do you eat white bread?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I usually eat it every day for breakfast."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Noted. What about whole wheat bread?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I take that maybe once a week, usually on weekends."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Great. Do you include oats in your diet?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Yes, about five times a week, I have oats with milk in the mornings."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Good to know. How frequently do you eat rice?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I have rice maybe twice a month, mostly when there is a special meal."
+    },
+    {
+      "speaker": "doctor",
+      "message": "And do you consume rice bran in any form?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Rarely, maybe occasionally in some multigrain flours."
+    },
+    {
+      "speaker": "doctor",
+      "message": "What about maida, like in bakery products?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I try to avoid it, so almost never."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Excellent choice. Do you eat dal regularly?"
+    },
+    {
+      "speaker": "patient",
+      "message": "Yes, dal is part of my lunch almost every day."
+    },
+    {
+      "speaker": "doctor",
+      "message": "How often do you use rava or semolina in your meals?"
+    },
+    {
+      "speaker": "patient",
+      "message": "We make rava upma maybe once or twice a month."
+    },
+    {
+      "speaker": "doctor",
+      "message": "Perfect, that gives me a good idea about your cereals and grains intake. Are there any changes you wish to make in your cereal choices?"
+    },
+    {
+      "speaker": "patient",
+      "message": "I’d like to reduce white bread and replace it with whole wheat bread or oats more often."
+    },
+    {
+      "speaker": "doctor",
+      "message": "That sounds like a good plan."
+    }
+  ],
+  "summary": {
+    "questions": [
+      {
+        "id": "food_frequency_questionnaire",
+        "title": "Food Frequency Questionnaire",
+        "icon": "material-symbols:checklist-rtl-rounded",
+        "sections": [
+          {
+            "id": "cereals_grains",
+            "title": "Cereals & Grains",
+            "icon": "material-symbols:checklist-rtl-rounded",
+            "fields": [
+              {
+                "id": "white_bread",
+                "label": "White Bread",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "whole_wheat_bread",
+                "label": "Whole Wheat Bread",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "oats",
+                "label": "Oats",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "rice",
+                "label": "Rice",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "rice_bran",
+                "label": "Rice Bran",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "maida",
+                "label": "Maida",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "dal",
+                "label": "Dal",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "rava",
+                "label": "Rava",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "rice_flakes",
+                "label": "Rice Flakes",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "vermicelli",
+                "label": "Vermicelli",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "moong_products",
+                "label": "Moong & products",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "wheat",
+                "label": "Wheat",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "pasta",
+                "label": "Pasta",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "wheat_dalia",
+                "label": "Wheat dalia",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "brown_rice",
+                "label": "Brown Rice",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "red_rice",
+                "label": "Red Rice",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "puffed_rice",
+                "label": "Puffed Rice",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "chapati",
+                "label": "Chapati",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "other_millets",
+                "label": "Other Millets (Foxtail millets,Little millet,Barnyard millet)",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              }
+            ]
+          },
+          {
+            "id": "pulses_legumes",
+            "title": "Pulses & Legumes",
+            "icon": "material-symbols:grain",
+            "fields": [
+              {
+                "id": "red_chori_dal",
+                "label": "Red Chori Dal",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "besan_gram_dal",
+                "label": "Besan/Gram Dal",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "green_gram_dal",
+                "label": "Green Gram Dal",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "urad_dal",
+                "label": "Urad Dal",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "masoor_dal",
+                "label": "Masoor Dal",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "cow_peas",
+                "label": "Cow Peas",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "chana_roast",
+                "label": "Chana Roast",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "horse_bean",
+                "label": "Horse Bean",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              }
+            ]
+          },
+          {
+            "id": "non_veg",
+            "title": "Non Veg",
+            "icon": "material-symbols:egg",
+            "fields": [
+              {
+                "id": "poultry",
+                "label": "Poultry",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "mutton",
+                "label": "Mutton",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "fish",
+                "label": "Fish",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "egg",
+                "label": "Egg",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              }
+            ]
+          },
+          {
+            "id": "legumes_beans",
+            "title": "Legumes & Beans",
+            "icon": "material-symbols:grain",
+            "fields": [
+              {
+                "id": "white_channa",
+                "label": "White Channa",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "chick_peas",
+                "label": "Chick Peas",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "soya_bean",
+                "label": "Soya Bean",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              }
+            ]
+          },
+          {
+            "id": "vegetables_fruits",
+            "title": "Vegetables & Fruits",
+            "icon": "material-symbols:nutrition",
+            "fields": [
+              {
+                "id": "green_leafy_vegetables",
+                "label": "Green Leafy Vegetables",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "roots_tubers",
+                "label": "Roots & Tubers",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "other_vegetables",
+                "label": "Other Vegetables",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "fruits",
+                "label": "Fruits",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              }
+            ]
+          },
+          {
+            "id": "dairy_products",
+            "title": "Dairy Products",
+            "icon": "material-symbols:water-drop",
+            "fields": [
+              {
+                "id": "milk",
+                "label": "Milk",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "curd",
+                "label": "Curd",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "paneer",
+                "label": "Paneer",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "cheese",
+                "label": "Cheese",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              }
+            ]
+          },
+          {
+            "id": "fats_oils",
+            "title": "Fats & Oils",
+            "icon": "material-symbols:water-drop",
+            "fields": [
+              {
+                "id": "vegetable_oil",
+                "label": "Vegetable Oil (used for Cooking)",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "ghee",
+                "label": "Ghee",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "vanaspati",
+                "label": "Vanaspati",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "coconut_oil",
+                "label": "Coconut Oil",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "mustard_oil",
+                "label": "Mustard Oil",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              }
+            ]
+          },
+          {
+            "id": "nuts",
+            "title": "Nuts",
+            "icon": "material-symbols:nutrition",
+            "fields": [
+              {
+                "id": "groundnuts",
+                "label": "Groundnuts",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "cashew_nuts",
+                "label": "Cashew Nuts",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "walnuts",
+                "label": "Walnuts",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              }
+            ]
+          },
+          {
+            "id": "seeds",
+            "title": "Seeds",
+            "icon": "material-symbols:grain",
+            "fields": [
+              {
+                "id": "chia_seeds",
+                "label": "Chia Seeds",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "flax_seeds",
+                "label": "Flax Seeds",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "pumpkin_seeds",
+                "label": "Pumpkin Seeds",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "sunflower_seeds",
+                "label": "Sunflower Seeds",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              }
+            ]
+          },
+          {
+            "id": "sugars",
+            "title": "Sugars",
+            "icon": "material-symbols:cake",
+            "fields": [
+              {
+                "id": "white_sugar",
+                "label": "White Sugar",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "jaggery",
+                "label": "Jaggery",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "honey",
+                "label": "Honey",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              }
+            ]
+          },
+          {
+            "id": "beverages",
+            "title": "Beverages",
+            "icon": "material-symbols:coffee-outline-rounded",
+            "fields": [
+              {
+                "id": "water",
+                "label": "Water",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "tea",
+                "label": "Tea",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "coffee",
+                "label": "Coffee",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "herbal_tea",
+                "label": "Herbal Tea",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "green_tea",
+                "label": "Green Tea",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "black_tea",
+                "label": "Black Tea",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "soft_drinks",
+                "label": "Soft Drinks (Pepsi, Coke, Sprite etc)",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              }
+            ]
+          },
+          {
+            "id": "others",
+            "title": "Others",
+            "icon": "material-symbols:restaurant",
+            "fields": [
+              {
+                "id": "pizza",
+                "label": "Pizza",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "fried_foods",
+                "label": "Fried Foods (Samosa, Vada, Chips, etc.)",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "pickle",
+                "label": "Pickle",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              },
+              {
+                "id": "sweets_products",
+                "label": "Sweets Products (Cake, Biscuits, Ras, Peda, Barfi)",
+                "type": "frequency",
+                "columns": [
+                  {
+                    "header": "Daily",
+                    "option": [
+                      "daily"
+                    ]
+                  },
+                  {
+                    "header": "Weekly (1,2,3,4,5)",
+                    "option": [
+                      "weekly_1",
+                      "weekly_2",
+                      "weekly_3",
+                      "weekly_4",
+                      "weekly_5"
+                    ]
+                  },
+                  {
+                    "header": "Monthly (1,2)",
+                    "option": [
+                      "monthly_1",
+                      "monthly_2"
+                    ]
+                  },
+                  {
+                    "header": "Rarely",
+                    "option": [
+                      "rarely"
+                    ]
+                  },
+                  {
+                    "header": "Never",
+                    "option": [
+                      "never"
+                    ]
+                  }
+                ],
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "fields": []
+      }
+    ]
+  }
+}

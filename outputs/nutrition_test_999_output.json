@@ -1,0 +1,1171 @@
+{
+  "sessionId": "nutrition_test_999",
+  "chunks": [
+    {
+      "chunk_num": 1,
+      "conversation": [
+        {
+          "speaker": "doctor",
+          "message": "I’d like to ask you a few questions to check your knowledge about nutrition."
+        },
+        {
+          "speaker": "patient",
+          "message": "Sure, let’s start."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Whole plant foods are foods as they exist in nature. Is that correct?"
+        },
+        {
+          "speaker": "patient",
+          "message": "Yes."
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 0.823,
+          "field_id": "whole_plant_foods",
+          "label": "Whole plant foods are foods as they exist in nature",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.5879,
+          "field_id": "salt_disease_risk",
+          "label": "High salt intake increases the risk of following disease",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.5438,
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.543,
+          "field_id": "best_cooking_method",
+          "label": "Choose the best cooking method",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.5207,
+          "field_id": "water_intake",
+          "label": "Recommended water intake for adults per day is",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.5136,
+          "field_id": "unsaturated_fat_oil",
+          "label": "Choose an oil with high unsaturated fat content",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "whole_plant_foods",
+          "label": "Whole plant foods are foods as they exist in nature",
+          "value": "Yes"
+        }
+      ]
+    },
+    {
+      "chunk_num": 2,
+      "conversation": [
+        {
+          "speaker": "patient",
+          "message": "Yes."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Good. Now, choose a food with high carbohydrate content."
+        },
+        {
+          "speaker": "patient",
+          "message": "Rice."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Right. Which food is a good substitute for ragi?"
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 0.7794,
+          "field_id": "ragi_substitute",
+          "label": "Choose a food which is a good substitute for ragi",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.7209,
+          "field_id": "artificial_sweeteners",
+          "label": "Artificial sweeteners are safe & healthy",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.6485,
+          "field_id": "high_protein_food",
+          "label": "Choose a food with high protein content",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.6285,
+          "field_id": "high_carb_food",
+          "label": "Choose a food with high carbohydrate content",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.5823,
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.5219,
+          "field_id": "unsaturated_fat_oil",
+          "label": "Choose an oil with high unsaturated fat content",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "high_carb_food",
+          "label": "Choose a food with high carbohydrate content",
+          "value": "Rice"
+        }
+      ]
+    },
+    {
+      "chunk_num": 3,
+      "conversation": [
+        {
+          "speaker": "doctor",
+          "message": "Right. Which food is a good substitute for ragi?"
+        },
+        {
+          "speaker": "patient",
+          "message": "Red rice."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Correct. When compared to natural foods, processed foods are usually?"
+        },
+        {
+          "speaker": "patient",
+          "message": "High in calories."
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 0.7744,
+          "field_id": "ragi_substitute",
+          "label": "Choose a food which is a good substitute for ragi",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.6889,
+          "field_id": "processed_vs_natural",
+          "label": "When compared to natural foods, processed foods are",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.5941,
+          "field_id": "best_cooking_method",
+          "label": "Choose the best cooking method",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.4605,
+          "field_id": "nuts_expensive",
+          "label": "Eating nuts are expensive with marginal benefits",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.3941,
+          "field_id": "artificial_sweeteners",
+          "label": "Artificial sweeteners are safe & healthy",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.3834,
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "ragi_substitute",
+          "label": "Choose a food which is a good substitute for ragi",
+          "value": "Red Rice"
+        },
+        {
+          "field_id": "processed_vs_natural",
+          "label": "When compared to natural foods, processed foods are",
+          "value": "High in Calories"
+        }
+      ]
+    },
+    {
+      "chunk_num": 4,
+      "conversation": [
+        {
+          "speaker": "patient",
+          "message": "High in calories."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Exactly. Choose a food with high protein content."
+        },
+        {
+          "speaker": "patient",
+          "message": "Broccoli."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Yes. Which oil has high unsaturated fat content?"
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 0.6208,
+          "field_id": "high_protein_food",
+          "label": "Choose a food with high protein content",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.5586,
+          "field_id": "unsaturated_fat_oil",
+          "label": "Choose an oil with high unsaturated fat content",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.5376,
+          "field_id": "saturated_fat_food",
+          "label": "Choose a food with high saturated fat content",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.4518,
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.3544,
+          "field_id": "healthiest_fat",
+          "label": "Choose the most healthy fat",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.3281,
+          "field_id": "nuts_expensive",
+          "label": "Eating nuts are expensive with marginal benefits",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "high_protein_food",
+          "label": "Choose a food with high protein content",
+          "value": "Broccoli"
+        }
+      ]
+    },
+    {
+      "chunk_num": 5,
+      "conversation": [
+        {
+          "speaker": "doctor",
+          "message": "Yes. Which oil has high unsaturated fat content?"
+        },
+        {
+          "speaker": "patient",
+          "message": "Sunflower oil."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Right. Which food is high in saturated fat?"
+        },
+        {
+          "speaker": "patient",
+          "message": "Meat."
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 0.9691,
+          "field_id": "saturated_fat_food",
+          "label": "Choose a food with high saturated fat content",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.9453,
+          "field_id": "unsaturated_fat_oil",
+          "label": "Choose an oil with high unsaturated fat content",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.8668,
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.696,
+          "field_id": "healthiest_fat",
+          "label": "Choose the most healthy fat",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.5871,
+          "field_id": "high_salt_food",
+          "label": "Choose a food which is high in salt content",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.5621,
+          "field_id": "best_cooking_method",
+          "label": "Choose the best cooking method",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "saturated_fat_food",
+          "label": "Choose a food with high saturated fat content",
+          "value": "Meat"
+        },
+        {
+          "field_id": "unsaturated_fat_oil",
+          "label": "Choose an oil with high unsaturated fat content",
+          "value": "Sunflower Oil"
+        },
+        {
+          "field_id": "healthiest_fat",
+          "label": "Choose the most healthy fat",
+          "value": "Unsaturated Fats"
+        }
+      ]
+    },
+    {
+      "chunk_num": 6,
+      "conversation": [
+        {
+          "speaker": "patient",
+          "message": "Meat."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Good. Now, which fats are the most healthy?"
+        },
+        {
+          "speaker": "patient",
+          "message": "Unsaturated fats."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Exactly. Choose a food rich in vitamins and minerals."
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 0.6069,
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.3867,
+          "field_id": "vitamin_mineral_food",
+          "label": "Choose a food with high vitamin & mineral content",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.3591,
+          "field_id": "artificial_sweeteners",
+          "label": "Artificial sweeteners are safe & healthy",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.3228,
+          "field_id": "high_fiber_food",
+          "label": "Choose a food which is high in fibre content",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.2854,
+          "field_id": "salt_disease_risk",
+          "label": "High salt intake increases the risk of following disease",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.2745,
+          "field_id": "water_intake",
+          "label": "Recommended water intake for adults per day is",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": []
+    },
+    {
+      "chunk_num": 7,
+      "conversation": [
+        {
+          "speaker": "doctor",
+          "message": "Exactly. Choose a food rich in vitamins and minerals."
+        },
+        {
+          "speaker": "patient",
+          "message": "Leafy vegetables."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Correct. How many daily servings of fruits and vegetables are recommended?"
+        },
+        {
+          "speaker": "patient",
+          "message": "5 servings."
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 0.7805,
+          "field_id": "daily_servings",
+          "label": "Recommended daily servings of fruits & vegetables are",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.6675,
+          "field_id": "vitamin_mineral_food",
+          "label": "Choose a food with high vitamin & mineral content",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.4871,
+          "field_id": "salt_disease_risk",
+          "label": "High salt intake increases the risk of following disease",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.4388,
+          "field_id": "nuts_expensive",
+          "label": "Eating nuts are expensive with marginal benefits",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.4381,
+          "field_id": "artificial_sweeteners",
+          "label": "Artificial sweeteners are safe & healthy",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.4185,
+          "field_id": "best_cooking_method",
+          "label": "Choose the best cooking method",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "daily_servings",
+          "label": "Recommended daily servings of fruits & vegetables are",
+          "value": "5 Servings"
+        },
+        {
+          "field_id": "vitamin_mineral_food",
+          "label": "Choose a food with high vitamin & mineral content",
+          "value": "Leafy Vegetables"
+        }
+      ]
+    },
+    {
+      "chunk_num": 8,
+      "conversation": [
+        {
+          "speaker": "patient",
+          "message": "5 servings."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Yes. Which food is high in fibre content?"
+        },
+        {
+          "speaker": "patient",
+          "message": "Pulses."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Good. Which food type is high in salt content?"
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 0.7576,
+          "field_id": "high_salt_food",
+          "label": "Choose a food which is high in salt content",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.701,
+          "field_id": "high_fiber_food",
+          "label": "Choose a food which is high in fibre content",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.616,
+          "field_id": "best_cooking_method",
+          "label": "Choose the best cooking method",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.4637,
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.4024,
+          "field_id": "salt_disease_risk",
+          "label": "High salt intake increases the risk of following disease",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.3941,
+          "field_id": "artificial_sweeteners",
+          "label": "Artificial sweeteners are safe & healthy",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "high_fiber_food",
+          "label": "Choose a food which is high in fibre content",
+          "value": "Pulses"
+        }
+      ]
+    },
+    {
+      "chunk_num": 9,
+      "conversation": [
+        {
+          "speaker": "doctor",
+          "message": "Good. Which food type is high in salt content?"
+        },
+        {
+          "speaker": "patient",
+          "message": "Canned foods."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Correct. Which is the best cooking method?"
+        },
+        {
+          "speaker": "patient",
+          "message": "Steaming."
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 1.0184,
+          "field_id": "best_cooking_method",
+          "label": "Choose the best cooking method",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.8804,
+          "field_id": "high_salt_food",
+          "label": "Choose a food which is high in salt content",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.5746,
+          "field_id": "salt_disease_risk",
+          "label": "High salt intake increases the risk of following disease",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.4589,
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.4438,
+          "field_id": "artificial_sweeteners",
+          "label": "Artificial sweeteners are safe & healthy",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.2981,
+          "field_id": "important_meal",
+          "label": "The most important meal of the day is",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "best_cooking_method",
+          "label": "Choose the best cooking method",
+          "value": "Steaming"
+        },
+        {
+          "field_id": "high_salt_food",
+          "label": "Choose a food which is high in salt content",
+          "value": "Canned Foods"
+        }
+      ]
+    },
+    {
+      "chunk_num": 10,
+      "conversation": [
+        {
+          "speaker": "patient",
+          "message": "Steaming."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Right. Eating nuts is expensive with marginal benefits—do you agree?"
+        },
+        {
+          "speaker": "patient",
+          "message": "No."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Good answer. Are artificial sweeteners safe and healthy?"
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 0.9193,
+          "field_id": "nuts_expensive",
+          "label": "Eating nuts are expensive with marginal benefits",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.7585,
+          "field_id": "artificial_sweeteners",
+          "label": "Artificial sweeteners are safe & healthy",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.4351,
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.4022,
+          "field_id": "longevity_meals",
+          "label": "How many meals is associated with longevity",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.3922,
+          "field_id": "salt_disease_risk",
+          "label": "High salt intake increases the risk of following disease",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.3326,
+          "field_id": "important_meal",
+          "label": "The most important meal of the day is",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": []
+    },
+    {
+      "chunk_num": 11,
+      "conversation": [
+        {
+          "speaker": "doctor",
+          "message": "Good answer. Are artificial sweeteners safe and healthy?"
+        },
+        {
+          "speaker": "patient",
+          "message": "No."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Correct. How many meals are associated with longevity?"
+        },
+        {
+          "speaker": "patient",
+          "message": "2-3 meals."
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 0.7078,
+          "field_id": "artificial_sweeteners",
+          "label": "Artificial sweeteners are safe & healthy",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.6235,
+          "field_id": "longevity_meals",
+          "label": "How many meals is associated with longevity",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.4158,
+          "field_id": "important_meal",
+          "label": "The most important meal of the day is",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.3351,
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.2768,
+          "field_id": "salt_disease_risk",
+          "label": "High salt intake increases the risk of following disease",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.216,
+          "field_id": "nuts_expensive",
+          "label": "Eating nuts are expensive with marginal benefits",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "longevity_meals",
+          "label": "How many meals is associated with longevity",
+          "value": "2-3"
+        }
+      ]
+    },
+    {
+      "chunk_num": 12,
+      "conversation": [
+        {
+          "speaker": "patient",
+          "message": "2-3 meals."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Yes. What is the most important meal of the day?"
+        },
+        {
+          "speaker": "patient",
+          "message": "Breakfast."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Exactly. Do saturated fats increase the risk for heart disease?"
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 1.1744,
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 1.1589,
+          "field_id": "important_meal",
+          "label": "The most important meal of the day is",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.6075,
+          "field_id": "salt_disease_risk",
+          "label": "High salt intake increases the risk of following disease",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.5116,
+          "field_id": "water_intake",
+          "label": "Recommended water intake for adults per day is",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.4083,
+          "field_id": "nuts_expensive",
+          "label": "Eating nuts are expensive with marginal benefits",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.3207,
+          "field_id": "artificial_sweeteners",
+          "label": "Artificial sweeteners are safe & healthy",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "important_meal",
+          "label": "The most important meal of the day is",
+          "value": "Breakfast"
+        }
+      ]
+    },
+    {
+      "chunk_num": 13,
+      "conversation": [
+        {
+          "speaker": "doctor",
+          "message": "Exactly. Do saturated fats increase the risk for heart disease?"
+        },
+        {
+          "speaker": "patient",
+          "message": "Yes."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Correct. What is the recommended daily water intake for adults?"
+        },
+        {
+          "speaker": "patient",
+          "message": "2 litres."
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 1.0841,
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 1.0639,
+          "field_id": "water_intake",
+          "label": "Recommended water intake for adults per day is",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.4832,
+          "field_id": "salt_disease_risk",
+          "label": "High salt intake increases the risk of following disease",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.3898,
+          "field_id": "fiber_prevents_disease",
+          "label": "High fibre intake prevents all the following disease except",
+          "type": "radio"
+        },
+        {
+          "rank": 5,
+          "score": 0.3801,
+          "field_id": "nuts_expensive",
+          "label": "Eating nuts are expensive with marginal benefits",
+          "type": "radio"
+        },
+        {
+          "rank": 6,
+          "score": 0.1211,
+          "field_id": "artificial_sweeteners",
+          "label": "Artificial sweeteners are safe & healthy",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "saturated_fat_heart_disease",
+          "label": "Saturated fats increases the risk for heart disease",
+          "value": "Yes"
+        },
+        {
+          "field_id": "water_intake",
+          "label": "Recommended water intake for adults per day is",
+          "value": "2 Litre"
+        }
+      ]
+    },
+    {
+      "chunk_num": 14,
+      "conversation": [
+        {
+          "speaker": "patient",
+          "message": "2 litres."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Yes. High fibre intake prevents many diseases except which one?"
+        },
+        {
+          "speaker": "patient",
+          "message": "Asthma."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Exactly. And finally, high salt intake increases the risk of which disease?"
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 0.864,
+          "field_id": "fiber_prevents_disease",
+          "label": "High fibre intake prevents all the following disease except",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.7005,
+          "field_id": "salt_disease_risk",
+          "label": "High salt intake increases the risk of following disease",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.4345,
+          "field_id": "nuts_expensive",
+          "label": "Eating nuts are expensive with marginal benefits",
+          "type": "radio"
+        },
+        {
+          "rank": 4,
+          "score": 0.3701,
+          "field_id": "artificial_sweeteners",
+          "label": "Artificial sweeteners are safe & healthy",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "fiber_prevents_disease",
+          "label": "High fibre intake prevents all the following disease except",
+          "value": "Asthma"
+        }
+      ]
+    },
+    {
+      "chunk_num": 15,
+      "conversation": [
+        {
+          "speaker": "doctor",
+          "message": "Exactly. And finally, high salt intake increases the risk of which disease?"
+        },
+        {
+          "speaker": "patient",
+          "message": "Hypertension."
+        },
+        {
+          "speaker": "doctor",
+          "message": "Perfect. That completes the nutrition knowledge check!"
+        }
+      ],
+      "reranker_top_questions": [
+        {
+          "rank": 1,
+          "score": 0.7885,
+          "field_id": "salt_disease_risk",
+          "label": "High salt intake increases the risk of following disease",
+          "type": "radio"
+        },
+        {
+          "rank": 2,
+          "score": 0.5694,
+          "field_id": "nuts_expensive",
+          "label": "Eating nuts are expensive with marginal benefits",
+          "type": "radio"
+        },
+        {
+          "rank": 3,
+          "score": 0.4428,
+          "field_id": "artificial_sweeteners",
+          "label": "Artificial sweeteners are safe & healthy",
+          "type": "radio"
+        }
+      ],
+      "answered_this_chunk": [
+        {
+          "field_id": "salt_disease_risk",
+          "label": "High salt intake increases the risk of following disease",
+          "value": "Hypertension"
+        }
+      ]
+    }
+  ],
+  "all_fields_current_state": [
+    {
+      "id": "whole_plant_foods",
+      "label": "Whole plant foods are foods as they exist in nature",
+      "value": "Yes"
+    },
+    {
+      "id": "high_carb_food",
+      "label": "Choose a food with high carbohydrate content",
+      "value": "Rice"
+    },
+    {
+      "id": "ragi_substitute",
+      "label": "Choose a food which is a good substitute for ragi",
+      "value": "Red Rice"
+    },
+    {
+      "id": "processed_vs_natural",
+      "label": "When compared to natural foods, processed foods are",
+      "value": "High in Calories"
+    },
+    {
+      "id": "high_protein_food",
+      "label": "Choose a food with high protein content",
+      "value": "Broccoli"
+    },
+    {
+      "id": "unsaturated_fat_oil",
+      "label": "Choose an oil with high unsaturated fat content",
+      "value": "Sunflower Oil"
+    },
+    {
+      "id": "saturated_fat_food",
+      "label": "Choose a food with high saturated fat content",
+      "value": "Meat"
+    },
+    {
+      "id": "healthiest_fat",
+      "label": "Choose the most healthy fat",
+      "value": "Unsaturated Fats"
+    },
+    {
+      "id": "vitamin_mineral_food",
+      "label": "Choose a food with high vitamin & mineral content",
+      "value": "Leafy Vegetables"
+    },
+    {
+      "id": "daily_servings",
+      "label": "Recommended daily servings of fruits & vegetables are",
+      "value": "5 Servings"
+    },
+    {
+      "id": "high_fiber_food",
+      "label": "Choose a food which is high in fibre content",
+      "value": "Pulses"
+    },
+    {
+      "id": "high_salt_food",
+      "label": "Choose a food which is high in salt content",
+      "value": "Canned Foods"
+    },
+    {
+      "id": "best_cooking_method",
+      "label": "Choose the best cooking method",
+      "value": "Steaming"
+    },
+    {
+      "id": "nuts_expensive",
+      "label": "Eating nuts are expensive with marginal benefits",
+      "value": ""
+    },
+    {
+      "id": "artificial_sweeteners",
+      "label": "Artificial sweeteners are safe & healthy",
+      "value": ""
+    },
+    {
+      "id": "longevity_meals",
+      "label": "How many meals is associated with longevity",
+      "value": "2-3"
+    },
+    {
+      "id": "important_meal",
+      "label": "The most important meal of the day is",
+      "value": "Breakfast"
+    },
+    {
+      "id": "saturated_fat_heart_disease",
+      "label": "Saturated fats increases the risk for heart disease",
+      "value": "Yes"
+    },
+    {
+      "id": "water_intake",
+      "label": "Recommended water intake for adults per day is",
+      "value": "2 Litre"
+    },
+    {
+      "id": "fiber_prevents_disease",
+      "label": "High fibre intake prevents all the following disease except",
+      "value": "Asthma"
+    },
+    {
+      "id": "salt_disease_risk",
+      "label": "High salt intake increases the risk of following disease",
+      "value": "Hypertension"
+    }
+  ]
+}

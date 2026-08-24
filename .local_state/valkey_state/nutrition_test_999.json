@@ -1,0 +1,254 @@
+{
+  "sessionId": "nutrition_test_999",
+  "source": "nutrition_knowledge",
+  "all_fields": [
+    {
+      "id": "whole_plant_foods",
+      "label": "Whole plant foods are foods as they exist in nature",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No",
+        "Not Sure"
+      ],
+      "value": "Yes"
+    },
+    {
+      "id": "high_carb_food",
+      "label": "Choose a food with high carbohydrate content",
+      "type": "radio",
+      "options": [
+        "Rice",
+        "Cabbage",
+        "Figs",
+        "Not Sure"
+      ],
+      "value": "Rice"
+    },
+    {
+      "id": "ragi_substitute",
+      "label": "Choose a food which is a good substitute for ragi",
+      "type": "radio",
+      "options": [
+        "White Rice",
+        "Red Rice",
+        "Noodles",
+        "Not Sure"
+      ],
+      "value": "Red Rice"
+    },
+    {
+      "id": "processed_vs_natural",
+      "label": "When compared to natural foods, processed foods are",
+      "type": "radio",
+      "options": [
+        "High in Calories",
+        "High in Nutrients",
+        "High in Fibres",
+        "Not Sure"
+      ],
+      "value": "High in Calories"
+    },
+    {
+      "id": "high_protein_food",
+      "label": "Choose a food with high protein content",
+      "type": "radio",
+      "options": [
+        "Oats",
+        "Pasta",
+        "Broccoli",
+        "Not Sure"
+      ],
+      "value": "Broccoli"
+    },
+    {
+      "id": "unsaturated_fat_oil",
+      "label": "Choose an oil with high unsaturated fat content",
+      "type": "radio",
+      "options": [
+        "Sunflower Oil",
+        "Ghee",
+        "Butter/Cheese",
+        "Not Sure"
+      ],
+      "value": "Sunflower Oil"
+    },
+    {
+      "id": "saturated_fat_food",
+      "label": "Choose a food with high saturated fat content",
+      "type": "radio",
+      "options": [
+        "Meat",
+        "Olive Oil",
+        "Nuts",
+        "Not Sure"
+      ],
+      "value": "Meat"
+    },
+    {
+      "id": "healthiest_fat",
+      "label": "Choose the most healthy fat",
+      "type": "radio",
+      "options": [
+        "Saturated Fats",
+        "Unsaturated Fats",
+        "Trans/Fatty Acids",
+        "Not Sure"
+      ],
+      "value": "Unsaturated Fats"
+    },
+    {
+      "id": "vitamin_mineral_food",
+      "label": "Choose a food with high vitamin & mineral content",
+      "type": "radio",
+      "options": [
+        "Leafy Vegetables",
+        "Whole Grains",
+        "Pulses",
+        "Not Sure"
+      ],
+      "value": "Leafy Vegetables"
+    },
+    {
+      "id": "daily_servings",
+      "label": "Recommended daily servings of fruits & vegetables are",
+      "type": "radio",
+      "options": [
+        "3 Servings",
+        "4 Servings",
+        "5 Servings",
+        "Not Sure"
+      ],
+      "value": "5 Servings"
+    },
+    {
+      "id": "high_fiber_food",
+      "label": "Choose a food which is high in fibre content",
+      "type": "radio",
+      "options": [
+        "Meat",
+        "Pulses",
+        "White Rice",
+        "Not Sure"
+      ],
+      "value": "Pulses"
+    },
+    {
+      "id": "high_salt_food",
+      "label": "Choose a food which is high in salt content",
+      "type": "radio",
+      "options": [
+        "Canned Foods",
+        "Bread",
+        "Vegetables",
+        "Not Sure"
+      ],
+      "value": "Canned Foods"
+    },
+    {
+      "id": "best_cooking_method",
+      "label": "Choose the best cooking method",
+      "type": "radio",
+      "options": [
+        "Steaming",
+        "Boiling",
+        "Sauting",
+        "Not Sure"
+      ],
+      "value": "Steaming"
+    },
+    {
+      "id": "nuts_expensive",
+      "label": "Eating nuts are expensive with marginal benefits",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No",
+        "Not Sure"
+      ],
+      "value": ""
+    },
+    {
+      "id": "artificial_sweeteners",
+      "label": "Artificial sweeteners are safe & healthy",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No",
+        "Not Sure"
+      ],
+      "value": ""
+    },
+    {
+      "id": "longevity_meals",
+      "label": "How many meals is associated with longevity",
+      "type": "radio",
+      "options": [
+        "1",
+        "2-3",
+        "4",
+        "Not Sure"
+      ],
+      "value": "2-3"
+    },
+    {
+      "id": "important_meal",
+      "label": "The most important meal of the day is",
+      "type": "radio",
+      "options": [
+        "Breakfast",
+        "Lunch",
+        "Dinner",
+        "Not Sure"
+      ],
+      "value": "Breakfast"
+    },
+    {
+      "id": "saturated_fat_heart_disease",
+      "label": "Saturated fats increases the risk for heart disease",
+      "type": "radio",
+      "options": [
+        "Yes",
+        "No",
+        "Not Sure"
+      ],
+      "value": "Yes"
+    },
+    {
+      "id": "water_intake",
+      "label": "Recommended water intake for adults per day is",
+      "type": "radio",
+      "options": [
+        "1 Litre",
+        "2 Litre",
+        "3 Litre",
+        "Not Sure"
+      ],
+      "value": "2 Litre"
+    },
+    {
+      "id": "fiber_prevents_disease",
+      "label": "High fibre intake prevents all the following disease except",
+      "type": "radio",
+      "options": [
+        "Heart Disease",
+        "Cancer",
+        "Obesity",
+        "Asthma"
+      ],
+      "value": "Asthma"
+    },
+    {
+      "id": "salt_disease_risk",
+      "label": "High salt intake increases the risk of following disease",
+      "type": "radio",
+      "options": [
+        "Diabetes",
+        "Hypertension",
+        "Cancer",
+        "Not Sure"
+      ],
+      "value": "Hypertension"
+    }
+  ]
+}
